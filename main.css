@@ -1,0 +1,572 @@
+:root {
+    --column-border-color: rgba(100,150,255,0.5); 
+    --light-blue-head: #b3e5fc;
+    --light-blue-color: #D5F3FE;
+}
+
+html,body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[class*="col"] {
+    float: left;
+    border: 1px solid var(--column-border-color) !important;
+}
+
+.col1 { width: 5%; }
+.col2 { width: 10%; }
+.col3 { width: 15%; }
+.col4 { width: 20%; }
+.col5 { width: 25%; }
+.col6 { width: 30%; }
+.col7 { width: 35%; }
+.col8 { width: 40%; }
+.col9 { width: 45%; }
+.col10 { width: 50%; }
+.col11 { width: 55%; }
+.col12 { width: 60%; }
+.col13 { width: 65%; }
+.col14 { width: 70%; }
+.col15 { width: 75%; }
+.col16 { width: 80%; }
+.col17 { width: 85%; }
+.col18 { width: 90%; }
+.col19 { width: 95%; }
+.col20 { width: 100%; }
+
+navigation {
+    height: 8vh;
+    background-color: var(--light-blue-color);
+    overflow-x: scroll;
+    justify-content: flex-start !important;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+
+navigation::-webkit-scrollbar {
+    display: none;
+}
+
+panel {
+    height: 62vh;
+    margin-top: 23vh;
+    background-color: white;
+}
+
+header {
+    height: 15vh;
+    background-color: var(--light-blue-head);
+    justify-content: flex-start !important;
+}
+
+top {
+    position: fixed;
+    top:0;
+    width: 100vw;
+}
+
+content {
+    height: 62vh;
+    background-color: white;
+    margin-top: 23vh;
+    align-items: flex-start !important;
+    overflow-y: scroll;
+}
+
+footer {
+    background-color: var(--light-blue-color);
+    position: fixed;
+    bottom: 0;
+    height: 15vh;
+}
+
+header, footer, content, panel, navigation {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: monospace;
+}
+
+.navbutton {
+    padding: 0 2% 0 2%;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--light-blue-color);
+    transition: 200ms ease-in-out;
+}
+
+.navbutton:hover {
+    filter: brightness(90%);
+}
+
+.navbutton:active {
+    filter: brightness(80%);
+}
+
+.navtext {
+    font-family: "Montserrat";
+    font-size: 2vh;
+    user-select: none;
+}
+
+.headerIcon {
+    height: 50%;
+    padding: 0 1vw 0 2vw;
+}
+
+.headerText {
+    font-weight: 1000;
+    font-family: "Baloo 2";
+    color: deepskyblue;
+    font-size: 5vh;
+}
+
+.homeShortcuts {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+}
+
+.shortcutHeader, .tasksPanelHeader {
+    font-family: "Montserrat";
+    font-size: 1.5vmax;
+    color: deepskyblue;
+}
+
+.tasksPanelButtonWipe {
+    color: red !important;
+    font-weight: 400 !important;
+    border: 1px solid rgb(255, 166, 166) !important;
+}
+
+.tasksPanelSubHeader {
+    font-size: 1vmax;
+    color: deepskyblue;
+    font-family: "Montserrat";
+}
+
+.contentPage {
+    height: fit-content;
+    min-height: 100%;
+    width: 100%;
+}
+
+
+content::-webkit-scrollbar {
+    display: none;
+}
+
+
+.contentPage {
+    display: none;
+    background-color: #e7fbff;
+}
+
+.contentPage[data-active] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+panel {
+    background-color: #f1fcfe;
+}
+
+.downloadIcon {
+    height: 1.5vmax;
+    width: 1.5vmax;
+}
+
+.downloadText {
+    font-family: "Montserrat";
+    font-size: 1vmax;
+    margin-left: 0.5vw;
+}
+
+.download {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    user-select: none;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.downloads {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.homeHeading {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 2.5vmax;
+}
+
+.homeTimetableWarn, .homeAccountWarn, .homeTasksInfo {
+    display: flex;
+    align-items: center;
+    background-color: #ffffc5;
+    padding: 1.5vmax;
+    border-radius: 0.5vmax;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 2vh;
+    width: 30vw;
+    height: 100%;
+}
+
+.warnings {
+    display: block;
+    width: 50%;
+    height: fit-content;
+}
+
+.wrapper {
+    margin-bottom: 2vh;
+    width: 100%;
+    height: 12vh;
+    overflow: hidden;
+    position: relative;
+    transition: 1s ease;
+}
+
+.wrapper.hidden {
+    width: 0%;
+    transition: height, 1s ease;
+}
+
+.homeTasksInfo {
+    background-color: #b4def3;
+}
+
+.warningIcon {
+    height: 2vmax;
+}
+
+.timetableWarningText {
+    font-size: 1vmax;
+    font-family: "Montserrat";
+    margin-left: 1.5vw;
+    color: black;
+    width: fit-content;
+    font-weight: 800;
+}
+
+.warningClose {
+    height: 2vmax;
+    margin-left: 1.5vw;
+}
+
+.taskIcon {
+    height: 2vmax;
+}
+
+.tasksPanelButton {
+    width: 50%;
+    font-size: 0.8vmax;
+    margin-bottom: 1vh;
+    background-color: rgb(229, 246, 252);
+    border: 1px solid dodgerblue;
+    padding: 2vh 0px 2vh 0px;
+    border-radius: 0.2vmax;
+    color: deepskyblue;
+    font-family: "Montserrat";
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tasksPanelButtonTimetable {
+    width: 50%;
+    font-size: 0.8vmax;
+    margin-bottom: 1vh;
+    background-color: rgb(229, 246, 252);
+    border: 1px solid dodgerblue;
+    padding: 2vh 0px 2vh 0px;
+    border-radius: 0.2vmax;
+    color: deepskyblue;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.buttonIcon {
+    height: 2vh;
+    margin-right: 0.5vw;
+}
+
+.panelNewTimetable {
+    padding-left: 1vw;
+}
+
+.noMarginBottom {
+    margin-bottom: 0px;
+}
+
+.taskInputBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    margin-bottom: 2vh;
+    width: 75%;
+    padding-top: 2vh;
+    position: relative;
+    height: 13.5%;
+}
+
+.taskInputText {
+    color: deepskyblue;
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 0.75vmax;
+    position: absolute;
+    top: 0px;
+    left: 0.1vw;
+    background-color: #e7fbff;
+}
+
+.taskInput {
+    border-radius: 0px;
+    border:0.2px solid black;
+    padding: 2vh 0.5vw 2vh 0.5vw;
+    font-size: 0.75vmax;
+    border-radius: 0.2vmax;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(229, 246, 252);
+    border: 1px solid dodgerblue;
+}
+
+.taskInput:focus {
+    outline: none;
+}
+
+.taskAddButton {
+    border-radius: 0.2vmax;
+    border: 1px solid dodgerblue;
+    font-size: 0.75vmax;
+    padding: 3vh 1vw 3vh 1vw;
+    width: 75%;
+    margin-top: 1vh;
+    text-align: center;
+    color: deepskyblue;
+    font-weight: 600;
+    background-color: rgb(229, 246, 252);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.task {
+    height: 20vmax;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    position: relative;
+    width: 95%;
+}
+
+
+
+
+
+
+.task[data-bg='0'] {
+    border: 1px solid dodgerblue;
+    background-color: var(--light-blue-color);
+}
+
+
+
+
+
+.task[data-bg='1'] {
+    background-image: url("icons/SocialStudies.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='2'] {
+    background-image: url("icons/Chemistry.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='3'] {
+    background-image: url("icons/img_americanfootball.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='4'] {
+    background-image: url("icons/img_bookclub.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='5'] {
+    background-image: url("icons/Geometry.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='6'] {
+    background-image: url("icons/img_code.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='7'] {
+    background-image: url("icons/img_cricket.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='8'] {
+    background-image: url("icons/img_read.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+.task[data-bg='9'] {
+    background-image: url("icons/WorldHistory.jpg");
+    background-size: cover;
+    background-position:center;
+    border: 1px solid black;
+}
+
+
+
+
+.taskTitle {
+    font-size: 1.5vmax;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+
+
+
+.taskSubject {
+    font-family: "Montserrat";
+    font-size: 1vmax;
+    font-weight: 500;
+}
+
+
+
+.taskTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 2vmax;
+    align-items: flex-start;
+    width: 50%;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+
+.taskDate {
+    padding: 2vmax;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: "Montserrat";
+    font-size: 1vmax;
+    font-weight: 500;
+}
+
+
+
+
+
+
+.taskClose {
+    height: 1vmax;
+    position: absolute;
+    margin: 2vmax;
+    right: 0;
+    top: 0;
+}
